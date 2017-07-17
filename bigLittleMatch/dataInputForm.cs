@@ -21,13 +21,21 @@ namespace bigLittleMatch
 
         private void addBigs_Click(object sender, EventArgs e)
         {
-            parentForm.bigs.Add(nameBox.Text, prefBox.Lines.ToList());
+			girl g = new girl();
+			g.isBig = true;
+			g.name = nameBox.Text;
+			g.prefs = prefBox.Lines.ToList();
+            parentForm.bigs.Add(g);
             resetForm();
         }
 
         private void addLittles_Click(object sender, EventArgs e)
         {
-            parentForm.littles.Add(nameBox.Text, prefBox.Lines.ToList());
+			girl g = new girl();
+			g.isBig = true;
+			g.name = nameBox.Text;
+			g.prefs = prefBox.Lines.ToList();
+			parentForm.littles.Add(g);
             resetForm();
         }
         private void resetForm()
