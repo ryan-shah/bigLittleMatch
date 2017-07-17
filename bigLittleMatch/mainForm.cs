@@ -52,30 +52,32 @@ namespace bigLittleMatch
                 bigs = new List<girl>();
 				littles = new List<girl>();
                 StreamReader SR = new StreamReader(file.FileName);
+                string headers = SR.ReadLine();
                 while(!SR.EndOfStream)
                 {
                     var line = SR.ReadLine();
                     var values = line.Split(',');
-                    if (values.Length >= 3)
+                    if (values.Length >= 4)
                     {
 						girl curr = new girl();
                         curr.prefs = new List<string>();
-						curr.name = values[1];
-                        for(int i = 2; i < values.Length; i++)
+						curr.name = values[2];
+                        for(int i = 4; i < values.Length; i++)
                         {
                             curr.prefs.Add(values[i].ToLower());
                         }
-                        if(values[0] == "big")
+                        if(values[3] == "Big")
                         {
 							curr.isBig = true;
                             bigs.Add(curr);
-                        } else if(values[0] == "little")
+                        } else if(values[3] == "Little")
                         {
 							curr.isBig = false;
                             littles.Add(curr);
                         }
                     }
                 }
+                SR.Close();
             }
 			printLists();
         }

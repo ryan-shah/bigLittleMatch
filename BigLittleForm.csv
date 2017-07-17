@@ -1,0 +1,11 @@
+Timestamp,Username,What's your name?,Are you a big or a little?,Choice #1,Choice #2,Choice #3,Choice #4,Choice #5,Choice #6,Choice #7,Choice #8,Choice #9,Choice #10
+2017/07/13 6:45:03 PM AST,test@email.com,Jesse,Big,Liz,Lizzie,Lisa,Lemon,Lauren,,,,,
+2017/07/13 6:46:25 PM AST,,Jane,Big,Liz,Lisa,Lizzie,Lauren,Lemon,,,,,
+2017/07/13 6:46:57 PM AST,,Joe,Big,Lisa,Liz,Lemon,Lauren,Lizzie,,,,,
+2017/07/13 6:48:08 PM AST,,Jackie,Big,Lizzie,Lemon,Laura,Liz,Lisa,,,,,
+2017/07/13 6:49:54 PM AST,,Joy,Big,Lauren,Lemon,Liz,Lizzie,Lisa,,,,,
+2017/07/13 6:50:35 PM AST,,Liz,Little,Jesse,Jane,Joe,Joy,Jackie,,,,,
+2017/07/13 6:51:53 PM AST,,Lizzie,Little,Joy,Joe,Jesse,Jane,Joy,,,,,
+2017/07/13 6:53:21 PM AST,,Lisa,Little,Joe,Jackie,Jane,Jesse,Joy,,,,,
+2017/07/13 6:55:16 PM AST,,Lemon,Little,Jackie,Joy,Joe,Jane,Jesse,,,,,
+2017/07/13 6:55:55 PM AST,,Lauren,Little,Joy,Jane,Jesse,Joe,Jackie,,,,,
