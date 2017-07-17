@@ -189,7 +189,7 @@ namespace bigLittleMatch
 								delLittle(littles[i].name);
 								results.Add(match);
 								changed = true;
-								break;
+								i--;
 							}
 						}
 					}
