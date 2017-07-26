@@ -79,7 +79,7 @@ namespace bigLittleMatch
                 }
                 SR.Close();
             }
-			printLists();
+			//printLists();
         }
 
 		private void delBig(string name)
@@ -186,7 +186,7 @@ namespace bigLittleMatch
 								pair match = new pair();
 								match.big = bigs[bigPos].name;
 								match.little = littles[i].name;
-								System.Diagnostics.Debug.WriteLine("match found " + bigs[bigPos].name + " " + littles[i].name);
+								//System.Diagnostics.Debug.WriteLine("match found " + bigs[bigPos].name + " " + littles[i].name);
 								delBig(bigs[bigPos].name);
 								delLittle(littles[i].name);
 								results.Add(match);
