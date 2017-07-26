@@ -22,6 +22,7 @@ namespace bigLittleMatch
 		public string name;
 		public List<string> prefs;
 		public bool isBig;
+        public int numMatches;
 	}
 
     public partial class mainForm : Form
@@ -32,11 +33,15 @@ namespace bigLittleMatch
 		public List<girl> errors = new List<girl>();
 
         dataInputForm input = new dataInputForm();
+        editBigsForm ebf = new editBigsForm();
+        editLittlesForm elf = new editLittlesForm();
 
         public mainForm()
         {
             InitializeComponent();
             input.parentForm = this;
+            ebf.parentForm = this;
+            elf.parentForm = this;
         }
 
         private void manualInputToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,6 +67,7 @@ namespace bigLittleMatch
 						girl curr = new girl();
                         curr.prefs = new List<string>();
 						curr.name = values[2];
+                        curr.numMatches = 1;
                         for(int i = 4; i < values.Length; i++)
                         {
                             curr.prefs.Add(values[i].ToLower());
@@ -128,7 +134,7 @@ namespace bigLittleMatch
 			}
 		}
 
-		private void del(girl g)
+		public void del(girl g)
         {
             if(g.isBig)
 			{
@@ -226,6 +232,18 @@ namespace bigLittleMatch
             }
             bigsBox.Lines = bs.ToArray();
             littleBox.Lines = ls.ToArray();
+        }
+
+        private void bigsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ebf.populate();
+            ebf.Show();
+        }
+
+        private void littlesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            elf.populate();
+            elf.Show();
         }
     }
 }
