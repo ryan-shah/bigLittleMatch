@@ -9,5 +9,5 @@ TODO
  * Add Buttons in additon to menu items
  * Help menu
  * About menu
- * Export Data (with erros)
+ * Export Data (with errors)
  * MacOs version

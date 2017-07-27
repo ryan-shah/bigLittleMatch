@@ -178,7 +178,7 @@ namespace bigLittleMatch
 			string names = "";
 			for (int i = 0; i < ls.Count; i++)
 			{
-				names = names + " " + (bigs[i].name);
+				names = names + " " + (ls[i].name);
 			}
 			System.Diagnostics.Debug.WriteLine(names);
 		}
@@ -269,6 +269,40 @@ namespace bigLittleMatch
         {
             elf.populate();
             elf.Show();
+        }
+
+        private void exportDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfg = new SaveFileDialog();
+            sfg.FileName = "MatchingResults.csv";
+            sfg.Filter = "csv files (*.csv)|*.csv|All Files (*.*)|*.*";
+            //sfg.FilterIndex = 2;
+            sfg.RestoreDirectory = true;
+            if(sfg.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter outfile = new StreamWriter(sfg.FileName))
+                {
+                    outfile.WriteLine("Big,Little");
+                    for(int i = 0; i < results.Count; i++)
+                    {
+                        outfile.WriteLine(results[i].big + "," + results[i].little);
+                    }
+                    outfile.WriteLine("");
+                    outfile.WriteLine("Unmatched Girls,Big/Little");
+                    for(int i = 0; i < errors.Count; i++)
+                    {
+                        string str = errors[i].name;
+                        if(errors[i].isBig)
+                        {
+                            str = str + "," + "Big";
+                        } else
+                        {
+                            str = str + "," + "Little";
+                        }
+                        outfile.WriteLine(str);
+                    }
+                }
+            }
         }
     }
 }
