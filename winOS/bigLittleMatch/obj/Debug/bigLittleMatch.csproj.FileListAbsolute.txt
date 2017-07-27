@@ -22,3 +22,8 @@ C:\Users\ryshah.NA\Documents\bigLittleMatch\bigLittleMatch\bin\Debug\bigLittleMa
 C:\Users\ryshah.NA\Documents\bigLittleMatch\bigLittleMatch\bin\Debug\bigLittleMatch.application
 C:\Users\ryshah.NA\Documents\bigLittleMatch\bigLittleMatch\obj\Debug\bigLittleMatch.exe.manifest
 C:\Users\ryshah.NA\Documents\bigLittleMatch\bigLittleMatch\obj\Debug\bigLittleMatch.application
+C:\Users\ryshah.NA\Documents\bigLittleMatch\bigLittleMatch\obj\Debug\bigLittleMatch.editBigsForm.resources
+C:\Users\ryshah.NA\Documents\bigLittleMatch\bigLittleMatch\obj\Debug\bigLittleMatch.editLittlesForm.resources
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\bin\Debug\bigLittleMatch.exe.config
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.exe
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.pdb
