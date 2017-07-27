@@ -25,6 +25,7 @@ namespace bigLittleMatch
 			g.isBig = true;
 			g.name = nameBox.Text;
 			g.prefs = prefBox.Lines.ToList();
+            g.numMatches = 1;
             parentForm.bigs.Add(g);
             resetForm();
         }
@@ -35,6 +36,7 @@ namespace bigLittleMatch
 			g.isBig = true;
 			g.name = nameBox.Text;
 			g.prefs = prefBox.Lines.ToList();
+            g.numMatches = 1;
 			parentForm.littles.Add(g);
             resetForm();
         }

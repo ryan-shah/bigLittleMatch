@@ -29,6 +29,9 @@ namespace bigLittleMatch
     {
 		public List<girl> bigs = new List<girl>();
 		public List<girl> littles = new List<girl>();
+        public List<girl> bigsTemp = new List<girl>(); //to be modified when computing matches
+        public List<girl> littlesTemp = new List<girl>(); //to be modified when computing matches
+
         public List<pair> results = new List<pair>();
 		public List<girl> errors = new List<girl>();
 
@@ -88,7 +91,7 @@ namespace bigLittleMatch
 			//printLists();
         }
 
-		private void delBig(string name)
+		private void delBig(string name, ref List<girl> littles, ref List<girl> bigs)
 		{
 			for(int i = 0; i < bigs.Count; i++)
 			{
@@ -111,7 +114,18 @@ namespace bigLittleMatch
 			}
 		}
 
-		private void delLittle(string name)
+        public void del(girl g)
+        {
+            if(g.isBig)
+            {
+                delBig(g.name, ref littles, ref bigs);
+            } else
+            {
+                delLittle(g.name, ref littles, ref bigs);
+            }
+        }
+
+		private void delLittle(string name, ref List<girl> littles, ref List<girl> bigs)
 		{
 			for (int i = 0; i < littles.Count; i++)
 			{
@@ -134,18 +148,20 @@ namespace bigLittleMatch
 			}
 		}
 
-		public void del(girl g)
+        public void decreaseBig(int index, ref List<girl> littles, ref List<girl> bigs)
         {
-            if(g.isBig)
-			{
-				delBig(g.name);
-			} else
-			{
-				delLittle(g.name);
-			}
+            if(bigs[index].numMatches > 1)
+            {
+                girl curr = bigs[index];
+                curr.numMatches -= 1;
+                bigs[index] = curr;
+            } else
+            {
+                delBig(bigs[index].name, ref littles, ref bigs);
+            }
         }
 
-		private int findBig(string name)
+		private int findBig(string name, ref List<girl> bigs)
 		{
 			for(int i = 0; i < bigs.Count; i++)
 			{
@@ -157,75 +173,84 @@ namespace bigLittleMatch
 			return -1;
 		}
 
-		private void printLists()
+		private void printLists(List<girl> ls)
 		{
 			string names = "";
-			for (int i = 0; i < bigs.Count; i++)
+			for (int i = 0; i < ls.Count; i++)
 			{
 				names = names + " " + (bigs[i].name);
 			}
 			System.Diagnostics.Debug.WriteLine(names);
-			names = "";
-			for (int i = 0; i < littles.Count; i++)
-			{
-				names = names + " " + littles[i].name;
-			}
-			System.Diagnostics.Debug.WriteLine(names);
 		}
+
+        private void computeMatches()
+        {
+            //clear old results
+            results = new List<pair>();
+            errors = new List<girl>();
+            //set temp lists
+            bigsTemp = bigs;
+            littlesTemp = littles;
+
+            int loopCounter = 0;
+            bool changed = false;
+            while (bigsTemp.Count > 0 && littlesTemp.Count > 0)
+            {
+                for (int i = 0; i < littlesTemp.Count; i++)
+                {
+                    //System.Diagnostics.Debug.WriteLine("littles[i].prefs.count " + littles[i].prefs.Count);
+                    if (littlesTemp[i].prefs.Count > 0)
+                    {
+                        int bigPos = findBig(littlesTemp[i].prefs[0], ref bigsTemp);
+                        //System.Diagnostics.Debug.WriteLine("big, bigpos : " + littles[i].prefs[0] + ", " + bigPos);
+                        if (bigPos != -1 && bigsTemp[bigPos].prefs.Count > 0)
+                        {
+                            if (bigsTemp[bigPos].prefs[0].ToLower() == littlesTemp[i].name.ToLower())
+                            {
+                                pair match = new pair();
+                                match.big = bigsTemp[bigPos].name;
+                                match.little = littlesTemp[i].name;
+                                //System.Diagnostics.Debug.WriteLine("match found " + bigs[bigPos].name + " " + littles[i].name);
+                                decreaseBig(bigPos, ref littlesTemp, ref bigsTemp);
+                                delLittle(littlesTemp[i].name, ref littlesTemp, ref bigsTemp);
+                                results.Add(match);
+                                changed = true;
+                                i--;
+                            }
+                        }
+                    }
+                }
+                if (!changed)
+                {
+                    loopCounter++;
+                }
+                else
+                {
+                    changed = false;
+                    loopCounter = 0;
+                }
+                if (loopCounter > 3)
+                {
+                    break;
+                }
+            }
+            foreach (girl g in bigsTemp)
+            {
+                errors.Add(g);
+            }
+            foreach (girl g in littlesTemp)
+            {
+                errors.Add(g);
+            }
+            printLists(errors);
+        }
 
 		private void computeMatchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-			int loopCounter = 0;
-			bool changed = false;
-            while (bigs.Count > 0 && littles.Count > 0) {
-                for(int i = 0; i < littles.Count; i++)
-				{
-					//System.Diagnostics.Debug.WriteLine("littles[i].prefs.count " + littles[i].prefs.Count);
-					if(littles[i].prefs.Count > 0)
-					{
-						int bigPos = findBig(littles[i].prefs[0]);
-						//System.Diagnostics.Debug.WriteLine("big, bigpos : " + littles[i].prefs[0] + ", " + bigPos);
-						if (bigPos != -1 && bigs[bigPos].prefs.Count > 0)
-						{
-							if (bigs[bigPos].prefs[0].ToLower() == littles[i].name.ToLower())
-							{
-								pair match = new pair();
-								match.big = bigs[bigPos].name;
-								match.little = littles[i].name;
-								//System.Diagnostics.Debug.WriteLine("match found " + bigs[bigPos].name + " " + littles[i].name);
-								delBig(bigs[bigPos].name);
-								delLittle(littles[i].name);
-								results.Add(match);
-								changed = true;
-								i--;
-							}
-						}
-					}
-				}
-				if(!changed)
-				{
-					loopCounter++;
-				} else
-				{
-					changed = false;
-					loopCounter = 0;
-				}
-				if(loopCounter > 3)
-				{
-					foreach(girl g in bigs)
-					{
-						errors.Add(g);
-					}
-					foreach(girl g in littles)
-					{
-						errors.Add(g);
-					}
-					break;
-				}
-            }
+            computeMatches();
             List<string> bs = new List<string>();
             List<string> ls = new List<string>();
-            foreach(var p in results)
+            foreach (var p in results)
             {
                 bs.Add(p.big);
                 ls.Add(p.little);

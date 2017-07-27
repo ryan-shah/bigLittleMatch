@@ -27,3 +27,16 @@ C:\Users\ryshah.NA\Documents\bigLittleMatch\bigLittleMatch\obj\Debug\bigLittleMa
 C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\bin\Debug\bigLittleMatch.exe.config
 C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.exe
 C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.pdb
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.csprojResolveAssemblyReference.cache
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.dataInputForm.resources
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.editBigsForm.resources
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.editLittlesForm.resources
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.mainForm.resources
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.Properties.Resources.resources
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.csproj.GenerateResource.Cache
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\bin\Debug\bigLittleMatch.exe.manifest
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\bin\Debug\bigLittleMatch.application
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\bin\Debug\bigLittleMatch.exe
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\bin\Debug\bigLittleMatch.pdb
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.exe.manifest
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.application
