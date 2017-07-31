@@ -17,7 +17,7 @@ TODO
  -------------
 
  ### Main
-![Alt Text](/img/main.png?raw=true "Main Screen")
+![Alt Text](/winOS/img/main.png?raw=true "Main Screen")
 
 ### Manual Data Input
 ![Alt Text](/winOS/img/dataInput.png?raw=true "Data Input")
