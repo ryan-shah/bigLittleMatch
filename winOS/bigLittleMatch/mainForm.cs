@@ -39,59 +39,71 @@ namespace bigLittleMatch
         editBigsForm ebf = new editBigsForm();
         editLittlesForm elf = new editLittlesForm();
 
-        public mainForm()
-        {
-            InitializeComponent();
-            input.parentForm = this;
-            ebf.parentForm = this;
-            elf.parentForm = this;
-        }
-
-        private void manualInputToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            input.Show();
-        }
-
-        private void openCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openFile()
         {
             OpenFileDialog file = new OpenFileDialog();
-            if(file.ShowDialog() == DialogResult.OK)
+            if (file.ShowDialog() == DialogResult.OK)
             {
                 bigs = new List<girl>();
-				littles = new List<girl>();
+                littles = new List<girl>();
                 StreamReader SR = new StreamReader(file.FileName);
                 string headers = SR.ReadLine();
-                while(!SR.EndOfStream)
+                while (!SR.EndOfStream)
                 {
                     var line = SR.ReadLine();
                     var values = line.Split(',');
                     if (values.Length >= 4)
                     {
-						girl curr = new girl();
+                        girl curr = new girl();
                         curr.prefs = new List<string>();
-						curr.name = values[2];
+                        curr.name = values[2];
                         curr.numMatches = 1;
-                        for(int i = 4; i < values.Length; i++)
+                        for (int i = 4; i < values.Length; i++)
                         {
                             curr.prefs.Add(values[i].ToLower());
                         }
-                        if(values[3] == "Big")
+                        if (values[3] == "Big")
                         {
-							curr.isBig = true;
+                            curr.isBig = true;
                             bigs.Add(curr);
-                        } else if(values[3] == "Little")
+                        }
+                        else if (values[3] == "Little")
                         {
-							curr.isBig = false;
+                            curr.isBig = false;
                             littles.Add(curr);
                         }
                     }
                 }
                 SR.Close();
             }
-			//printLists();
+            //printLists();
+            List<string> bs = new List<string>();
+            List<string> ls = new List<string>();
+            foreach (var g in bigs)
+            {
+                bs.Add(g.name);
+            }
+            foreach (var g in littles)
+            {
+                ls.Add(g.name);
+            }
+            bigsBox.Lines = bs.ToArray();
+            littleBox.Lines = ls.ToArray();
         }
 
-		private void delBig(string name, ref List<girl> littles, ref List<girl> bigs)
+        public void del(girl g)
+        {
+            if (g.isBig)
+            {
+                delBig(g.name, ref littles, ref bigs);
+            }
+            else
+            {
+                delLittle(g.name, ref littles, ref bigs);
+            }
+        }
+
+        private void delBig(string name, ref List<girl> littles, ref List<girl> bigs)
 		{
 			for(int i = 0; i < bigs.Count; i++)
 			{
@@ -113,17 +125,6 @@ namespace bigLittleMatch
 				}
 			}
 		}
-
-        public void del(girl g)
-        {
-            if(g.isBig)
-            {
-                delBig(g.name, ref littles, ref bigs);
-            } else
-            {
-                delLittle(g.name, ref littles, ref bigs);
-            }
-        }
 
 		private void delLittle(string name, ref List<girl> littles, ref List<girl> bigs)
 		{
@@ -245,57 +246,32 @@ namespace bigLittleMatch
             printLists(errors);
         }
 
-		private void computeMatchesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            computeMatches();
-            List<string> bs = new List<string>();
-            List<string> ls = new List<string>();
-            foreach (var p in results)
-            {
-                bs.Add(p.big);
-                ls.Add(p.little);
-            }
-            bigsBox.Lines = bs.ToArray();
-            littleBox.Lines = ls.ToArray();
-        }
-
-        private void bigsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ebf.populate();
-            ebf.Show();
-        }
-
-        private void littlesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            elf.populate();
-            elf.Show();
-        }
-
-        private void exportDataToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveFile()
         {
             SaveFileDialog sfg = new SaveFileDialog();
             sfg.FileName = "MatchingResults.csv";
             sfg.Filter = "csv files (*.csv)|*.csv|All Files (*.*)|*.*";
             //sfg.FilterIndex = 2;
             sfg.RestoreDirectory = true;
-            if(sfg.ShowDialog() == DialogResult.OK)
+            if (sfg.ShowDialog() == DialogResult.OK)
             {
                 using (StreamWriter outfile = new StreamWriter(sfg.FileName))
                 {
                     outfile.WriteLine("Big,Little");
-                    for(int i = 0; i < results.Count; i++)
+                    for (int i = 0; i < results.Count; i++)
                     {
                         outfile.WriteLine(results[i].big + "," + results[i].little);
                     }
                     outfile.WriteLine("");
                     outfile.WriteLine("Unmatched Girls,Big/Little");
-                    for(int i = 0; i < errors.Count; i++)
+                    for (int i = 0; i < errors.Count; i++)
                     {
                         string str = errors[i].name;
-                        if(errors[i].isBig)
+                        if (errors[i].isBig)
                         {
                             str = str + "," + "Big";
-                        } else
+                        }
+                        else
                         {
                             str = str + "," + "Little";
                         }
@@ -304,5 +280,78 @@ namespace bigLittleMatch
                 }
             }
         }
+
+        public mainForm()
+        {
+            InitializeComponent();
+            input.parentForm = this;
+            ebf.parentForm = this;
+            elf.parentForm = this;
+        }
+
+        private void manualInputToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            input.ShowDialog();
+        }
+
+        private void openCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFile();
+        }
+
+        private void computeMatchesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            computeMatches();
+        }
+
+        private void bigsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ebf.populate();
+            ebf.ShowDialog();
+        }
+
+        private void littlesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            elf.populate();
+            elf.ShowDialog();
+        }
+
+        private void exportDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFile();
+        }
+
+        private void LoadCSV_Click(object sender, EventArgs e)
+        {
+            openFile();
+        }
+
+        private void manualInput_Click(object sender, EventArgs e)
+        {
+            input.ShowDialog();
+        }
+
+        private void editBigs_Click(object sender, EventArgs e)
+        {
+            ebf.populate();
+            ebf.ShowDialog();
+        }
+
+        private void editLittles_Click(object sender, EventArgs e)
+        {
+            elf.populate();
+            elf.ShowDialog();
+        }
+
+        private void match_Click(object sender, EventArgs e)
+        {
+            computeMatches();
+        }
+
+        private void export_Click(object sender, EventArgs e)
+        {
+            saveFile();
+        }
+
     }
 }

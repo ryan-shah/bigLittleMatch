@@ -42,30 +42,47 @@
             this.bigsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.littlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataInputGroup = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LoadCSV = new System.Windows.Forms.Button();
+            this.manualInput = new System.Windows.Forms.Button();
+            this.dataContainer = new System.Windows.Forms.GroupBox();
+            this.resultsBox = new System.Windows.Forms.GroupBox();
+            this.editBigs = new System.Windows.Forms.Button();
+            this.editLittles = new System.Windows.Forms.Button();
+            this.match = new System.Windows.Forms.Button();
+            this.export = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.dataInputGroup.SuspendLayout();
+            this.dataContainer.SuspendLayout();
+            this.resultsBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // littleBox
             // 
-            this.littleBox.Location = new System.Drawing.Point(206, 51);
+            this.littleBox.Location = new System.Drawing.Point(193, 27);
             this.littleBox.Multiline = true;
             this.littleBox.Name = "littleBox";
-            this.littleBox.Size = new System.Drawing.Size(181, 379);
+            this.littleBox.ReadOnly = true;
+            this.littleBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.littleBox.Size = new System.Drawing.Size(175, 228);
             this.littleBox.TabIndex = 4;
             // 
             // bigsBox
             // 
-            this.bigsBox.Location = new System.Drawing.Point(12, 51);
+            this.bigsBox.Location = new System.Drawing.Point(6, 27);
             this.bigsBox.Multiline = true;
             this.bigsBox.Name = "bigsBox";
-            this.bigsBox.Size = new System.Drawing.Size(181, 379);
+            this.bigsBox.ReadOnly = true;
+            this.bigsBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.bigsBox.Size = new System.Drawing.Size(175, 228);
             this.bigsBox.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Location = new System.Drawing.Point(64, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 24);
             this.label1.TabIndex = 6;
@@ -75,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(202, 24);
+            this.label2.Location = new System.Drawing.Point(253, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 24);
             this.label2.TabIndex = 7;
@@ -144,14 +161,14 @@
             // bigsToolStripMenuItem
             // 
             this.bigsToolStripMenuItem.Name = "bigsToolStripMenuItem";
-            this.bigsToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.bigsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bigsToolStripMenuItem.Text = "Bigs";
             this.bigsToolStripMenuItem.Click += new System.EventHandler(this.bigsToolStripMenuItem_Click);
             // 
             // littlesToolStripMenuItem
             // 
             this.littlesToolStripMenuItem.Name = "littlesToolStripMenuItem";
-            this.littlesToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.littlesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.littlesToolStripMenuItem.Text = "Littles";
             this.littlesToolStripMenuItem.Click += new System.EventHandler(this.littlesToolStripMenuItem_Click);
             // 
@@ -161,21 +178,130 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // dataInputGroup
+            // 
+            this.dataInputGroup.Controls.Add(this.manualInput);
+            this.dataInputGroup.Controls.Add(this.LoadCSV);
+            this.dataInputGroup.Controls.Add(this.label3);
+            this.dataInputGroup.Location = new System.Drawing.Point(13, 28);
+            this.dataInputGroup.Name = "dataInputGroup";
+            this.dataInputGroup.Size = new System.Drawing.Size(374, 55);
+            this.dataInputGroup.TabIndex = 9;
+            this.dataInputGroup.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(134, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 24);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Data Input";
+            // 
+            // LoadCSV
+            // 
+            this.LoadCSV.Location = new System.Drawing.Point(6, 19);
+            this.LoadCSV.Name = "LoadCSV";
+            this.LoadCSV.Size = new System.Drawing.Size(91, 23);
+            this.LoadCSV.TabIndex = 1;
+            this.LoadCSV.Text = "Load CSV File";
+            this.LoadCSV.UseVisualStyleBackColor = true;
+            this.LoadCSV.Click += new System.EventHandler(this.LoadCSV_Click);
+            // 
+            // manualInput
+            // 
+            this.manualInput.Location = new System.Drawing.Point(277, 19);
+            this.manualInput.Name = "manualInput";
+            this.manualInput.Size = new System.Drawing.Size(91, 23);
+            this.manualInput.TabIndex = 2;
+            this.manualInput.Text = "Manual Input";
+            this.manualInput.UseVisualStyleBackColor = true;
+            this.manualInput.Click += new System.EventHandler(this.manualInput_Click);
+            // 
+            // dataContainer
+            // 
+            this.dataContainer.Controls.Add(this.editLittles);
+            this.dataContainer.Controls.Add(this.editBigs);
+            this.dataContainer.Controls.Add(this.label1);
+            this.dataContainer.Controls.Add(this.littleBox);
+            this.dataContainer.Controls.Add(this.bigsBox);
+            this.dataContainer.Controls.Add(this.label2);
+            this.dataContainer.Location = new System.Drawing.Point(13, 90);
+            this.dataContainer.Name = "dataContainer";
+            this.dataContainer.Size = new System.Drawing.Size(374, 292);
+            this.dataContainer.TabIndex = 10;
+            this.dataContainer.TabStop = false;
+            // 
+            // resultsBox
+            // 
+            this.resultsBox.Controls.Add(this.export);
+            this.resultsBox.Controls.Add(this.match);
+            this.resultsBox.Location = new System.Drawing.Point(13, 388);
+            this.resultsBox.Name = "resultsBox";
+            this.resultsBox.Size = new System.Drawing.Size(374, 38);
+            this.resultsBox.TabIndex = 11;
+            this.resultsBox.TabStop = false;
+            // 
+            // editBigs
+            // 
+            this.editBigs.Location = new System.Drawing.Point(57, 261);
+            this.editBigs.Name = "editBigs";
+            this.editBigs.Size = new System.Drawing.Size(75, 23);
+            this.editBigs.TabIndex = 8;
+            this.editBigs.Text = "Edit";
+            this.editBigs.UseVisualStyleBackColor = true;
+            this.editBigs.Click += new System.EventHandler(this.editBigs_Click);
+            // 
+            // editLittles
+            // 
+            this.editLittles.Location = new System.Drawing.Point(241, 261);
+            this.editLittles.Name = "editLittles";
+            this.editLittles.Size = new System.Drawing.Size(75, 23);
+            this.editLittles.TabIndex = 9;
+            this.editLittles.Text = "Edit";
+            this.editLittles.UseVisualStyleBackColor = true;
+            this.editLittles.Click += new System.EventHandler(this.editLittles_Click);
+            // 
+            // match
+            // 
+            this.match.Location = new System.Drawing.Point(40, 9);
+            this.match.Name = "match";
+            this.match.Size = new System.Drawing.Size(108, 23);
+            this.match.TabIndex = 0;
+            this.match.Text = "Compute Matches";
+            this.match.UseVisualStyleBackColor = true;
+            this.match.Click += new System.EventHandler(this.match_Click);
+            // 
+            // export
+            // 
+            this.export.Location = new System.Drawing.Point(223, 9);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(108, 23);
+            this.export.TabIndex = 1;
+            this.export.Text = "Export Matches";
+            this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.export_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 438);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.bigsBox);
-            this.Controls.Add(this.littleBox);
+            this.Controls.Add(this.resultsBox);
+            this.Controls.Add(this.dataInputGroup);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.dataContainer);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainForm";
             this.Text = "Big Little Matching";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.dataInputGroup.ResumeLayout(false);
+            this.dataInputGroup.PerformLayout();
+            this.dataContainer.ResumeLayout(false);
+            this.dataContainer.PerformLayout();
+            this.resultsBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,6 +323,16 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bigsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem littlesToolStripMenuItem;
+        private System.Windows.Forms.GroupBox dataInputGroup;
+        private System.Windows.Forms.Button manualInput;
+        private System.Windows.Forms.Button LoadCSV;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox dataContainer;
+        private System.Windows.Forms.Button editLittles;
+        private System.Windows.Forms.Button editBigs;
+        private System.Windows.Forms.GroupBox resultsBox;
+        private System.Windows.Forms.Button export;
+        private System.Windows.Forms.Button match;
     }
 }
 
