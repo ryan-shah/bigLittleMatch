@@ -98,7 +98,9 @@ namespace bigLittleMatch
                                 curr.prefs = new List<string>();
                                 curr.name = values[2];
                                 curr.numMatches = 1;
-                                for (int i = 4; i < values.Length; i++)
+                                //for the remainder of values
+                                //last col is email so skips
+                                for (int i = 4; i < values.Length -1; i++)
                                 {
                                     curr.prefs.Add(values[i].ToLower());
                                 }
