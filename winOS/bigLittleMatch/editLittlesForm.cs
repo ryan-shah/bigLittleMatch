@@ -51,6 +51,7 @@ namespace bigLittleMatch
                 parentForm.del(parentForm.littles[nameBox.SelectedIndex]);
                 populate();
                 delBtn.Enabled = false;
+                parentForm.updateLists();
             }
         }
 

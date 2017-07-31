@@ -12,6 +12,7 @@ namespace bigLittleMatch
 {
     public partial class helpForm : Form
     {
+        public mainForm parentForm;
         public helpForm()
         {
             InitializeComponent();

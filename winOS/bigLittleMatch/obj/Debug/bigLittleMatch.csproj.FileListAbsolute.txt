@@ -40,3 +40,4 @@ C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\bin\Debug\bigLi
 C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\bin\Debug\bigLittleMatch.pdb
 C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.exe.manifest
 C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.application
+C:\Users\ryshah.NA\Documents\bigLittleMatch\winOS\bigLittleMatch\obj\Debug\bigLittleMatch.helpForm.resources

@@ -42,6 +42,7 @@ namespace bigLittleMatch
         }
         private void resetForm()
         {
+            parentForm.updateLists();
             nameBox.ResetText();
             prefBox.ResetText();
         }
