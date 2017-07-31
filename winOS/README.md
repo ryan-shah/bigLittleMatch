@@ -17,15 +17,15 @@ TODO
  -------------
 
  ### Main
-![Main Screen](/img/main.png?raw=true)
+![Alt Text](/img/main.png?raw=true "Main Screen")
 
 ### Manual Data Input
-![Data Input](/img/dataInput.png?raw=true)
+![Alt Text](/winOS/img/dataInput.png?raw=true "Data Input")
 
 ### Edit Screens
 
 #### Bigs
-![Edit Bigs](/img/editBigs.png?raw=true)
+![Alt Text](/winOS/img/editBigs.png?raw=true "Edit Bigs")
 
 #### Littles
-![Edit Littles](/img/editLittles.png?raw=true)
+![Alt Text](/winOS/img/editLittles.png?raw=true "Edit Littles")
