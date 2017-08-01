@@ -10,4 +10,4 @@
   - General application layout
   - Created uneditable placeholders for loaded bigs and littles
   - Created a file open dialog that is limited to CSV files only
-  - ![Alt text](/latest.png)
+  - ![Alt text](/macOS/latest.png)
