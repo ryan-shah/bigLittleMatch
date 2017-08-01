@@ -43,15 +43,16 @@
             this.littlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataInputGroup = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.LoadCSV = new System.Windows.Forms.Button();
             this.manualInput = new System.Windows.Forms.Button();
+            this.LoadCSV = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.dataContainer = new System.Windows.Forms.GroupBox();
-            this.resultsBox = new System.Windows.Forms.GroupBox();
-            this.editBigs = new System.Windows.Forms.Button();
             this.editLittles = new System.Windows.Forms.Button();
-            this.match = new System.Windows.Forms.Button();
+            this.editBigs = new System.Windows.Forms.Button();
+            this.resultsBox = new System.Windows.Forms.GroupBox();
             this.export = new System.Windows.Forms.Button();
+            this.match = new System.Windows.Forms.Button();
+            this.viewMatches = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.dataInputGroup.SuspendLayout();
             this.dataContainer.SuspendLayout();
@@ -161,14 +162,14 @@
             // bigsToolStripMenuItem
             // 
             this.bigsToolStripMenuItem.Name = "bigsToolStripMenuItem";
-            this.bigsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bigsToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.bigsToolStripMenuItem.Text = "Bigs";
             this.bigsToolStripMenuItem.Click += new System.EventHandler(this.bigsToolStripMenuItem_Click);
             // 
             // littlesToolStripMenuItem
             // 
             this.littlesToolStripMenuItem.Name = "littlesToolStripMenuItem";
-            this.littlesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.littlesToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.littlesToolStripMenuItem.Text = "Littles";
             this.littlesToolStripMenuItem.Click += new System.EventHandler(this.littlesToolStripMenuItem_Click);
             // 
@@ -190,15 +191,15 @@
             this.dataInputGroup.TabIndex = 9;
             this.dataInputGroup.TabStop = false;
             // 
-            // label3
+            // manualInput
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(134, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Data Input";
+            this.manualInput.Location = new System.Drawing.Point(277, 19);
+            this.manualInput.Name = "manualInput";
+            this.manualInput.Size = new System.Drawing.Size(91, 23);
+            this.manualInput.TabIndex = 2;
+            this.manualInput.Text = "Manual Input";
+            this.manualInput.UseVisualStyleBackColor = true;
+            this.manualInput.Click += new System.EventHandler(this.manualInput_Click);
             // 
             // LoadCSV
             // 
@@ -210,15 +211,15 @@
             this.LoadCSV.UseVisualStyleBackColor = true;
             this.LoadCSV.Click += new System.EventHandler(this.LoadCSV_Click);
             // 
-            // manualInput
+            // label3
             // 
-            this.manualInput.Location = new System.Drawing.Point(277, 19);
-            this.manualInput.Name = "manualInput";
-            this.manualInput.Size = new System.Drawing.Size(91, 23);
-            this.manualInput.TabIndex = 2;
-            this.manualInput.Text = "Manual Input";
-            this.manualInput.UseVisualStyleBackColor = true;
-            this.manualInput.Click += new System.EventHandler(this.manualInput_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(134, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 24);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Data Input";
             // 
             // dataContainer
             // 
@@ -234,15 +235,15 @@
             this.dataContainer.TabIndex = 10;
             this.dataContainer.TabStop = false;
             // 
-            // resultsBox
+            // editLittles
             // 
-            this.resultsBox.Controls.Add(this.export);
-            this.resultsBox.Controls.Add(this.match);
-            this.resultsBox.Location = new System.Drawing.Point(13, 388);
-            this.resultsBox.Name = "resultsBox";
-            this.resultsBox.Size = new System.Drawing.Size(374, 38);
-            this.resultsBox.TabIndex = 11;
-            this.resultsBox.TabStop = false;
+            this.editLittles.Location = new System.Drawing.Point(241, 261);
+            this.editLittles.Name = "editLittles";
+            this.editLittles.Size = new System.Drawing.Size(75, 23);
+            this.editLittles.TabIndex = 9;
+            this.editLittles.Text = "Edit";
+            this.editLittles.UseVisualStyleBackColor = true;
+            this.editLittles.Click += new System.EventHandler(this.editLittles_Click);
             // 
             // editBigs
             // 
@@ -254,19 +255,30 @@
             this.editBigs.UseVisualStyleBackColor = true;
             this.editBigs.Click += new System.EventHandler(this.editBigs_Click);
             // 
-            // editLittles
+            // resultsBox
             // 
-            this.editLittles.Location = new System.Drawing.Point(241, 261);
-            this.editLittles.Name = "editLittles";
-            this.editLittles.Size = new System.Drawing.Size(75, 23);
-            this.editLittles.TabIndex = 9;
-            this.editLittles.Text = "Edit";
-            this.editLittles.UseVisualStyleBackColor = true;
-            this.editLittles.Click += new System.EventHandler(this.editLittles_Click);
+            this.resultsBox.Controls.Add(this.viewMatches);
+            this.resultsBox.Controls.Add(this.export);
+            this.resultsBox.Controls.Add(this.match);
+            this.resultsBox.Location = new System.Drawing.Point(13, 388);
+            this.resultsBox.Name = "resultsBox";
+            this.resultsBox.Size = new System.Drawing.Size(374, 38);
+            this.resultsBox.TabIndex = 11;
+            this.resultsBox.TabStop = false;
+            // 
+            // export
+            // 
+            this.export.Location = new System.Drawing.Point(260, 9);
+            this.export.Name = "export";
+            this.export.Size = new System.Drawing.Size(108, 23);
+            this.export.TabIndex = 1;
+            this.export.Text = "Export Matches";
+            this.export.UseVisualStyleBackColor = true;
+            this.export.Click += new System.EventHandler(this.export_Click);
             // 
             // match
             // 
-            this.match.Location = new System.Drawing.Point(40, 9);
+            this.match.Location = new System.Drawing.Point(6, 9);
             this.match.Name = "match";
             this.match.Size = new System.Drawing.Size(108, 23);
             this.match.TabIndex = 0;
@@ -274,15 +286,14 @@
             this.match.UseVisualStyleBackColor = true;
             this.match.Click += new System.EventHandler(this.match_Click);
             // 
-            // export
+            // viewMatches
             // 
-            this.export.Location = new System.Drawing.Point(223, 9);
-            this.export.Name = "export";
-            this.export.Size = new System.Drawing.Size(108, 23);
-            this.export.TabIndex = 1;
-            this.export.Text = "Export Matches";
-            this.export.UseVisualStyleBackColor = true;
-            this.export.Click += new System.EventHandler(this.export_Click);
+            this.viewMatches.Location = new System.Drawing.Point(134, 9);
+            this.viewMatches.Name = "viewMatches";
+            this.viewMatches.Size = new System.Drawing.Size(103, 23);
+            this.viewMatches.TabIndex = 2;
+            this.viewMatches.Text = "View Matches";
+            this.viewMatches.UseVisualStyleBackColor = true;
             // 
             // mainForm
             // 
@@ -334,6 +345,7 @@
         private System.Windows.Forms.GroupBox resultsBox;
         private System.Windows.Forms.Button export;
         private System.Windows.Forms.Button match;
+        private System.Windows.Forms.Button viewMatches;
     }
 }
 
