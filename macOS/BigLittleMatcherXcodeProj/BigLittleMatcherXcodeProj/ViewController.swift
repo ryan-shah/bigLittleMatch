@@ -11,8 +11,21 @@ import Cocoa
 class ViewController: NSViewController {
     
     @IBOutlet var BigsTextView: NSTextView!
-    
     @IBOutlet var LittlesTextView: NSTextView!
+    @IBOutlet weak var EditBigsButtonOutlet: NSButton!
+    @IBOutlet weak var EditLittlesButtonOutlet: NSButton!
+    @IBOutlet weak var ComputeMatchesButtonOutlet: NSButton!
+    @IBOutlet weak var ExportMatchesButtonOutlet: NSButton!
+    
+    var chosenCSV:String = ""
+    
+    
+    @IBAction func EditBigsButton(_ sender: Any) {
+    }
+    
+    @IBAction func EditLittlesButton(_ sender: Any) {
+    }
+    
     
     @IBAction func LoadCSV_Click(_ sender: Any) {
         
@@ -23,13 +36,13 @@ class ViewController: NSViewController {
         fileOpener.allowedFileTypes = ["csv"]
         
         fileOpener.runModal()
-        let chosenCSV:String = fileOpener.url!.absoluteString
         
-        if (chosenCSV != nil) {
-            // file exists
+        if let url = (fileOpener.url) {
+            var chosenCSV = fileOpener.url!.absoluteString
+            print(chosenCSV)
         }
         else {
-            // file was not chosen
+            chosenCSV = "null"
         }
     }
     
@@ -38,18 +51,26 @@ class ViewController: NSViewController {
         BigsTextView.isEditable = false
         LittlesTextView.isEditable = false
     }
+    func disableDependentButtons() {
+        EditBigsButtonOutlet.isEnabled = false
+        EditLittlesButtonOutlet.isEnabled = false
+        ComputeMatchesButtonOutlet.isEnabled = false
+        ExportMatchesButtonOutlet.isEnabled = false
+    }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         disableTextViews()
+        disableDependentButtons()
         
     }
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            
+            
         }
     }
 

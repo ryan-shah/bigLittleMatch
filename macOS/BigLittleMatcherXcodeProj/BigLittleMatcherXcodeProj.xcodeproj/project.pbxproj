@@ -13,6 +13,7 @@
 		B88F96FE1F2FCDC80064407C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88F96FC1F2FCDC80064407C /* Main.storyboard */; };
 		B88F97091F2FCDC80064407C /* BigLittleMatcherXcodeProjTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F97081F2FCDC80064407C /* BigLittleMatcherXcodeProjTests.swift */; };
 		B88F97141F2FCDC90064407C /* BigLittleMatcherXcodeProjUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F97131F2FCDC90064407C /* BigLittleMatcherXcodeProjUITests.swift */; };
+		B8B3AA1B1F3101800073E7B2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B3AA1A1F3101800073E7B2 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		B88F970F1F2FCDC90064407C /* BigLittleMatcherXcodeProjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigLittleMatcherXcodeProjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88F97131F2FCDC90064407C /* BigLittleMatcherXcodeProjUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigLittleMatcherXcodeProjUITests.swift; sourceTree = "<group>"; };
 		B88F97151F2FCDC90064407C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8B3AA1A1F3101800073E7B2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B3AA1B1F3101800073E7B2 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 				B88F97071F2FCDC80064407C /* BigLittleMatcherXcodeProjTests */,
 				B88F97121F2FCDC90064407C /* BigLittleMatcherXcodeProjUITests */,
 				B88F96F41F2FCDC80064407C /* Products */,
+				B8B3AA191F3101800073E7B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +124,14 @@
 				B88F97151F2FCDC90064407C /* Info.plist */,
 			);
 			path = BigLittleMatcherXcodeProjUITests;
+			sourceTree = "<group>";
+		};
+		B8B3AA191F3101800073E7B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8B3AA1A1F3101800073E7B2 /* Cocoa.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,6 +510,7 @@
 				B88F971A1F2FCDC90064407C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B88F971B1F2FCDC90064407C /* Build configuration list for PBXNativeTarget "BigLittleMatcherXcodeProjTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +519,7 @@
 				B88F971D1F2FCDC90064407C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B88F971E1F2FCDC90064407C /* Build configuration list for PBXNativeTarget "BigLittleMatcherXcodeProjUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +528,7 @@
 				B88F97201F2FCDC90064407C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
