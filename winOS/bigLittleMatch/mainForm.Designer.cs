@@ -50,9 +50,10 @@
             this.editLittles = new System.Windows.Forms.Button();
             this.editBigs = new System.Windows.Forms.Button();
             this.resultsBox = new System.Windows.Forms.GroupBox();
+            this.viewMatches = new System.Windows.Forms.Button();
             this.export = new System.Windows.Forms.Button();
             this.match = new System.Windows.Forms.Button();
-            this.viewMatches = new System.Windows.Forms.Button();
+            this.viewMatchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.dataInputGroup.SuspendLayout();
             this.dataContainer.SuspendLayout();
@@ -117,6 +118,7 @@
             this.openCSVToolStripMenuItem,
             this.manualInputToolStripMenuItem,
             this.computeMatchesToolStripMenuItem,
+            this.viewMatchesToolStripMenuItem,
             this.exportDataToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -266,6 +268,16 @@
             this.resultsBox.TabIndex = 11;
             this.resultsBox.TabStop = false;
             // 
+            // viewMatches
+            // 
+            this.viewMatches.Location = new System.Drawing.Point(134, 9);
+            this.viewMatches.Name = "viewMatches";
+            this.viewMatches.Size = new System.Drawing.Size(103, 23);
+            this.viewMatches.TabIndex = 2;
+            this.viewMatches.Text = "View Matches";
+            this.viewMatches.UseVisualStyleBackColor = true;
+            this.viewMatches.Click += new System.EventHandler(this.viewMatches_Click);
+            // 
             // export
             // 
             this.export.Location = new System.Drawing.Point(260, 9);
@@ -286,14 +298,12 @@
             this.match.UseVisualStyleBackColor = true;
             this.match.Click += new System.EventHandler(this.match_Click);
             // 
-            // viewMatches
+            // viewMatchesToolStripMenuItem
             // 
-            this.viewMatches.Location = new System.Drawing.Point(134, 9);
-            this.viewMatches.Name = "viewMatches";
-            this.viewMatches.Size = new System.Drawing.Size(103, 23);
-            this.viewMatches.TabIndex = 2;
-            this.viewMatches.Text = "View Matches";
-            this.viewMatches.UseVisualStyleBackColor = true;
+            this.viewMatchesToolStripMenuItem.Name = "viewMatchesToolStripMenuItem";
+            this.viewMatchesToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.viewMatchesToolStripMenuItem.Text = "View Matches";
+            this.viewMatchesToolStripMenuItem.Click += new System.EventHandler(this.viewMatchesToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -304,7 +314,9 @@
             this.Controls.Add(this.dataInputGroup);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataContainer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "mainForm";
             this.Text = "Big Little Matching";
             this.menuStrip1.ResumeLayout(false);
@@ -346,6 +358,7 @@
         private System.Windows.Forms.Button export;
         private System.Windows.Forms.Button match;
         private System.Windows.Forms.Button viewMatches;
+        private System.Windows.Forms.ToolStripMenuItem viewMatchesToolStripMenuItem;
     }
 }
 

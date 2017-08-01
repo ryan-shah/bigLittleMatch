@@ -42,6 +42,7 @@ namespace bigLittleMatch
         editBigsForm ebf = new editBigsForm();
         editLittlesForm elf = new editLittlesForm();
         helpForm help = new helpForm();
+        matchesForm matches = new matchesForm();
 
         //set parents of child forms
         private void setParents()
@@ -50,6 +51,16 @@ namespace bigLittleMatch
             ebf.parentForm = this;
             elf.parentForm = this;
             help.parentForm = this;
+            matches.parentForm = this;
+        }
+
+        public void copyLists(List<girl> from, List<girl> to)
+        {
+            to.Clear();
+            foreach(girl o in from)
+            {
+                to.Add(o);
+            }
         }
 
         //opens a file and scans for big/little data
@@ -186,25 +197,25 @@ namespace bigLittleMatch
 
         //deletes a little from provided lists of littles and bigs
         //made with refs to allow deletion from temp or main lists
-        private void delLittle(string name, ref List<girl> littles, ref List<girl> bigs)
+        private void delLittle(string name, ref List<girl> li, ref List<girl> bi)
 		{
             //remove from littles
-			for (int i = 0; i < littles.Count; i++)
+			for (int i = 0; i < li.Count; i++)
 			{
-				if (littles[i].name.ToLower() == name.ToLower())
+				if (li[i].name.ToLower() == name.ToLower())
 				{
-					littles.RemoveAt(i);
+					li.RemoveAt(i);
 					break;
 				}
 			}
             //remove from big prefs
-			for (int i = 0; i < bigs.Count; i++)
+			for (int i = 0; i < bi.Count; i++)
 			{
-				for (int j = 0; j < bigs[i].prefs.Count; j++)
+				for (int j = 0; j < bi[i].prefs.Count; j++)
 				{
-					if (bigs[i].prefs[j].ToLower() == name.ToLower())
+					if (bi[i].prefs[j].ToLower() == name.ToLower())
 					{
-						bigs[i].prefs.RemoveAt(j);
+						bi[i].prefs.RemoveAt(j);
 						break;
 					}
 				}
@@ -259,8 +270,8 @@ namespace bigLittleMatch
             results = new List<pair>();
             errors = new List<girl>();
             //set temp lists
-            bigsTemp = bigs;
-            littlesTemp = littles;
+            copyLists(bigs, bigsTemp);
+            copyLists(littles, littlesTemp);
 
             //variable to make sure we dont infinite loop if there are leftover bigs + littles
             int loopCounter = 0;
@@ -329,11 +340,13 @@ namespace bigLittleMatch
             {
                 errors.Add(g);
             }
+            string message = "Success! " + results.Count + " Matches found! " + errors.Count + " people unaacounted for.";
+            MessageBox.Show(message, "Done", MessageBoxButtons.OK);
             //printLists(errors);
         }
 
         //saves data to csv
-        private void saveFile()
+        public void saveFile()
         {
             //open save file dialog
             SaveFileDialog sfg = new SaveFileDialog();
@@ -376,6 +389,34 @@ namespace bigLittleMatch
                     }
                 }
             }
+        }
+
+        public string[] printMatches()
+        {
+            List<String> res = new List<string>();
+            foreach(pair p in results)
+            {
+                res.Add(p.big + " and " + p.little);
+            }
+            return res.ToArray();
+        }
+
+        public string[] printErrors()
+        {
+            List<string> res = new List<string>();
+            foreach(girl g in errors)
+            {
+                string buff = g.name;
+                if(g.isBig)
+                {
+                    buff = buff + " " + "(Big)";
+                } else
+                {
+                    buff = buff + " " + "(Little)";
+                }
+                res.Add(buff);
+            }
+            return res.ToArray();
         }
 
         //form methods
@@ -452,6 +493,16 @@ namespace bigLittleMatch
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             help.ShowDialog();
+        }
+
+        private void viewMatches_Click(object sender, EventArgs e)
+        {
+            matches.ShowDialog();
+        }
+
+        private void viewMatchesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            matches.ShowDialog();
         }
     }
 }
