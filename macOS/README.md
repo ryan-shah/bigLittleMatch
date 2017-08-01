@@ -1,5 +1,3 @@
-#### Big Little Matcher macOS version
-
 ## To do:
   - Synchronize layout with winOS version
   - CSV functionality
