@@ -17,13 +17,17 @@ class ViewController: NSViewController {
     @IBOutlet weak var ComputeMatchesButtonOutlet: NSButton!
     @IBOutlet weak var ExportMatchesButtonOutlet: NSButton!
     
+    @IBOutlet weak var ManualInputButtonOutlet: NSButton!
     var chosenCSV:String = ""
     
     
-    @IBAction func EditBigsButton(_ sender: Any) {
+    @IBAction func ExportMatchesButton_Click(_ sender: Any) {
     }
     
-    @IBAction func EditLittlesButton(_ sender: Any) {
+    @IBAction func EditBigsButton_Click(_ sender: Any) {
+    }
+    
+    @IBAction func EditLittlesButton_Click(_ sender: Any) {
     }
     
     
@@ -44,6 +48,10 @@ class ViewController: NSViewController {
         else {
             chosenCSV = "null"
         }
+    }
+    
+    
+    @IBAction func ManualInputButton_Click(_ sender: Any) {
     }
     
     

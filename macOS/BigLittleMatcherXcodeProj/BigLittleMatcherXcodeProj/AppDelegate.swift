@@ -12,9 +12,11 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 
+    @IBOutlet weak var ExportMatchesMenuItem: NSMenuItem!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        ExportMatchesMenuItem.target = self
+        ExportMatchesMenuItem.isEnabled = false
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

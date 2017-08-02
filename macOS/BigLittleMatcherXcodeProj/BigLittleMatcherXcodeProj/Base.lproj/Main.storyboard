@@ -60,10 +60,21 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="Open CSV File..." keyEquivalent="o" id="Was-JA-tGl"/>
-                                        <menuItem title="Enter names manually" keyEquivalent="e" id="aTl-1u-JFS"/>
-                                        <menuItem title="Export data..." id="lb3-Dv-ct3">
+                                        <menuItem title="Open CSV File..." keyEquivalent="o" id="Was-JA-tGl">
+                                            <connections>
+                                                <action selector="LoadCSV_Click:" target="Ady-hI-5gd" id="6Pf-7n-Bxd"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Manual Input" keyEquivalent="i" id="aTl-1u-JFS">
+                                            <connections>
+                                                <action selector="ManualInputButton_Click:" target="Ady-hI-5gd" id="kAa-f8-rdw"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Export matches..." id="lb3-Dv-ct3">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="ExportMatchesButton_Click:" target="Ady-hI-5gd" id="h5a-Dd-VDh"/>
+                                            </connections>
                                         </menuItem>
                                     </items>
                                 </menu>
@@ -108,13 +119,17 @@
                         </items>
                     </menu>
                     <connections>
-                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="n7I-sr-eGH"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BigLittleMatcherXcodeProj" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BigLittleMatcherXcodeProj" customModuleProvider="target">
+                    <connections>
+                        <outlet property="ExportMatchesMenuItem" destination="lb3-Dv-ct3" id="4yK-Jq-ZHC"/>
+                    </connections>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="137" y="-361"/>
+            <point key="canvasLocation" x="-113" y="-361"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -188,6 +203,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="ManualInputButton_Click:" target="XfG-lQ-9wD" id="x9G-x4-I6w"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ntu-cX-1QC">
                                 <rect key="frame" x="81" y="95" width="64" height="32"/>
@@ -226,6 +244,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="ExportMatchesButton_Click:" target="XfG-lQ-9wD" id="BZE-Eu-q6N"/>
+                                </connections>
                             </button>
                             <scrollView wantsLayer="YES" fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOX-49-h5Y">
                                 <rect key="frame" x="20" y="143" width="186" height="210"/>
@@ -288,9 +309,10 @@
                         <outlet property="ComputeMatchesButtonOutlet" destination="IYO-HZ-nqL" id="6NR-8o-7LC"/>
                         <outlet property="EditBigsButtonOutlet" destination="Ntu-cX-1QC" id="huF-37-mjy"/>
                         <outlet property="EditLittlesButtonOutlet" destination="bXa-DM-T0m" id="Szh-XO-LOQ"/>
-                        <outlet property="ExportMatchesButtonOutlet" destination="PEq-sL-zkT" id="Kfh-yc-M3q"/>
+                        <outlet property="ExportMatchesButtonOutlet" destination="PEq-sL-zkT" id="GPL-M6-nWT"/>
                         <outlet property="LittlesTextView" destination="GVx-Ck-tRq" id="MpD-Zr-edH"/>
                         <outlet property="LoadCSVButtonOutlet" destination="XVf-Lc-bHM" id="2WW-0P-yaF"/>
+                        <outlet property="ManualInputButtonOutlet" destination="pYu-BT-VhY" id="WTg-Nb-k5n"/>
                         <outlet property="TitleLabel" destination="VmZ-bd-g4E" id="fjY-Fo-9Yz"/>
                         <outlet property="yee" destination="mwJ-xJ-iH8" id="KTX-Ag-875"/>
                     </connections>
