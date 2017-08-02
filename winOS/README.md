@@ -16,7 +16,7 @@ TODO
  Screens
  -------------
 
- ### Main
+### Main
 ![Alt Text](/winOS/img/main.png?raw=true "Main Screen")
 
 ### Manual Data Input

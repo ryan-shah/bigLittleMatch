@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="bigLittleMatch.exe" size="32152">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="bigLittleMatch.exe" size="32664">
       <assemblyIdentity name="bigLittleMatch" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bTCMwridpBUYN6MCo/wbUCSeh06m0aZuqZUwdeiODG0=</dsig:DigestValue>
+        <dsig:DigestValue>aCZQ7R0z2av9ocCRx3YdpGkQeSijAFVrmf5Qm1kwlYQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

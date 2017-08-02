@@ -509,7 +509,8 @@ namespace bigLittleMatch
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            help.ShowDialog();
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1nsQLFHTEssoZHufmz7eB_PJQJAjBBZtTkuj76Y2gWRU/edit?usp=sharing");
+            //help.ShowDialog();
         }
 
         private void viewMatches_Click(object sender, EventArgs e)

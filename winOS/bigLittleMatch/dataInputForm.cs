@@ -33,7 +33,7 @@ namespace bigLittleMatch
         private void addLittles_Click(object sender, EventArgs e)
         {
 			girl g = new girl();
-			g.isBig = true;
+			g.isBig = false;
 			g.name = nameBox.Text;
 			g.prefs = prefBox.Lines.ToList();
             g.numMatches = 1;
