@@ -29,3 +29,6 @@ TODO
 
 #### Littles
 ![Alt Text](/winOS/img/editLittles.png?raw=true "Edit Littles")
+
+### View Matches
+![Alt Text](/winOS/img/viewMatches.png?raw=true "View Matches")

@@ -54,12 +54,29 @@ namespace bigLittleMatch
             matches.parentForm = this;
         }
 
-        public void copyLists(List<girl> from, List<girl> to)
+        //function to copy a list of string from one list to another to avoid passing by reference
+        public void copyListsS(List<string> from, List<string> to)
+        {
+            to.Clear();
+            foreach(string s in from)
+            {
+                to.Add(s);
+            }
+        }
+        
+        //function to copy a list of girls from one list to another to avoid passing by reference
+        public void copyListsG(List<girl> from, List<girl> to)
         {
             to.Clear();
             foreach(girl o in from)
             {
-                to.Add(o);
+                girl newG = new girl();
+                newG.name = o.name;
+                newG.isBig = o.isBig;
+                newG.numMatches = o.numMatches;
+                newG.prefs = new List<string>();
+                copyListsS(o.prefs, newG.prefs);
+                to.Add(newG);
             }
         }
 
@@ -270,8 +287,8 @@ namespace bigLittleMatch
             results = new List<pair>();
             errors = new List<girl>();
             //set temp lists
-            copyLists(bigs, bigsTemp);
-            copyLists(littles, littlesTemp);
+            copyListsG(bigs, bigsTemp);
+            copyListsG(littles, littlesTemp);
 
             //variable to make sure we dont infinite loop if there are leftover bigs + littles
             int loopCounter = 0;
@@ -340,7 +357,7 @@ namespace bigLittleMatch
             {
                 errors.Add(g);
             }
-            string message = "Success! " + results.Count + " Matches found! " + errors.Count + " people unaacounted for.";
+            string message = "Success! " + results.Count + " Matches found! " + errors.Count + " people unaccounted for.";
             MessageBox.Show(message, "Done", MessageBoxButtons.OK);
             //printLists(errors);
         }
