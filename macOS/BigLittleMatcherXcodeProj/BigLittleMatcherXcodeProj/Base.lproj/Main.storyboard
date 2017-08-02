@@ -328,8 +328,10 @@
                 <windowController id="oDe-PN-0bI" sceneMemberID="viewController">
                     <window key="window" title="Manual Entry" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ZZT-CB-AoE">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <rect key="contentRect" x="1685" y="366" width="480" height="270"/>
+                        <rect key="contentRect" x="1685" y="366" width="358" height="407"/>
                         <rect key="screenRect" x="1440" y="65" width="1680" height="1028"/>
+                        <value key="minSize" type="size" width="358" height="407"/>
+                        <value key="maxSize" type="size" width="358" height="407"/>
                     </window>
                     <connections>
                         <segue destination="BKn-zM-buP" kind="relationship" relationship="window.shadowedContentViewController" id="Ltg-yX-GOt"/>
@@ -337,7 +339,7 @@
                 </windowController>
                 <customObject id="i9e-3K-cq6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="1225"/>
+            <point key="canvasLocation" x="291" y="1277"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="psj-XX-yhA">
@@ -410,7 +412,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DNc-sm-Goj">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DNc-sm-Goj" userLabel="Button">
                                 <rect key="frame" x="39" y="51" width="133" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Add to Bigs" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BDh-hO-n32">
@@ -439,7 +441,7 @@
                 </viewController>
                 <customObject id="1JY-Ly-iaz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="1644.5"/>
+            <point key="canvasLocation" x="-123" y="1277"/>
         </scene>
     </scenes>
 </document>

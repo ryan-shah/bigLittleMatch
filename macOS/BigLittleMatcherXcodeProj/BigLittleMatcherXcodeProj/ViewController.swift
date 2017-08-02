@@ -42,8 +42,9 @@ class ViewController: NSViewController {
         fileOpener.runModal()
         
         if let url = (fileOpener.url) {
-            var chosenCSV = fileOpener.url!.absoluteString
-            print(chosenCSV)
+            let fileContent = try? String(contentsOf: url)
+            let lines : [String] = fileContent!.components(separatedBy: "\n")
+            print(lines[2])
         }
         else {
             chosenCSV = "null"
