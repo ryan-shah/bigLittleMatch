@@ -8,31 +8,35 @@
 
 import Cocoa
 
+class Girl: NSObject {
+    var name : String = ""
+    var prefs : [String] = []
+    var numMatches: Int = 0
+    var isBig: Bool = false
+}
+
 class ViewController: NSViewController {
     
-    @IBOutlet var BigsTextView: NSTextView!
-    @IBOutlet var LittlesTextView: NSTextView!
-    @IBOutlet weak var EditBigsButtonOutlet: NSButton!
-    @IBOutlet weak var EditLittlesButtonOutlet: NSButton!
-    @IBOutlet weak var ComputeMatchesButtonOutlet: NSButton!
-    @IBOutlet weak var ExportMatchesButtonOutlet: NSButton!
+    // Program functions
     
-    @IBOutlet weak var ManualInputButtonOutlet: NSButton!
-    var chosenCSV:String = ""
-    
-    
-    @IBAction func ExportMatchesButton_Click(_ sender: Any) {
+    // Making boxes uneditable
+    func disableTextViews() {
+        BigsTextView.isEditable = false
+        LittlesTextView.isEditable = false
     }
     
-    @IBAction func EditBigsButton_Click(_ sender: Any) {
+    // Disabling buttons unusable at startup
+    func disableDependentButtons() {
+        EditBigsButtonOutlet.isEnabled = false
+        EditLittlesButtonOutlet.isEnabled = false
+        ComputeMatchesButtonOutlet.isEnabled = false
+        ExportMatchesButtonOutlet.isEnabled = false
     }
-    
-    @IBAction func EditLittlesButton_Click(_ sender: Any) {
-    }
-    
-    
-    @IBAction func LoadCSV_Click(_ sender: Any) {
         
+    
+    
+    // Opening the CSV file
+    func openFile() {
         let fileOpener:NSOpenPanel = NSOpenPanel()
         fileOpener.allowsMultipleSelection = false
         fileOpener.canChooseFiles = true
@@ -44,11 +48,62 @@ class ViewController: NSViewController {
         if let url = (fileOpener.url) {
             let fileContent = try? String(contentsOf: url)
             let lines : [String] = fileContent!.components(separatedBy: "\n")
-            print(lines[2])
+            
+            var bigs: [Girl] = []
+            var littles: [Girl] = []
+            
+            var headers: String = lines[0]
+            
+            for line in lines {
+                var values = line.components(separatedBy: ",")
+                
+                if (values.count >= 4) {
+                    var currentGirl : Girl = Girl()
+                    currentGirl.name = values[2]
+                    currentGirl.prefs = []
+                    currentGirl.numMatches =  1
+                    for var i in (0..<values.count) {
+                        currentGirl.prefs.append(values[i].lowercased())
+                    }
+                    if (values[3] == "Big") {
+                        currentGirl.isBig = true
+                        bigs.append(currentGirl)
+                    }
+                    else if (values[3] == "Little") {
+                        currentGirl.isBig = false
+                        littles.append(currentGirl)
+                    }
+                }
+            }
+            //updateList(bigs, littles)
         }
         else {
             chosenCSV = "null"
         }
+    }
+
+    // IBOutlets
+    @IBOutlet var BigsTextView: NSTextView!
+    @IBOutlet var LittlesTextView: NSTextView!
+    @IBOutlet weak var EditBigsButtonOutlet: NSButton!
+    @IBOutlet weak var EditLittlesButtonOutlet: NSButton!
+    @IBOutlet weak var ComputeMatchesButtonOutlet: NSButton!
+    @IBOutlet weak var ExportMatchesButtonOutlet: NSButton!
+    @IBOutlet weak var ManualInputButtonOutlet: NSButton!
+    var chosenCSV:String = ""
+    
+    //IBActions
+    @IBAction func ExportMatchesButton_Click(_ sender: Any) {
+    }
+    
+    @IBAction func EditBigsButton_Click(_ sender: Any) {
+    }
+    
+    @IBAction func EditLittlesButton_Click(_ sender: Any) {
+    }
+    
+    @IBAction func LoadCSV_Click(_ sender: Any) {
+        openFile()
     }
     
     
@@ -56,20 +111,12 @@ class ViewController: NSViewController {
     }
     
     
-    func disableTextViews() {
-        BigsTextView.isEditable = false
-        LittlesTextView.isEditable = false
-    }
-    func disableDependentButtons() {
-        EditBigsButtonOutlet.isEnabled = false
-        EditLittlesButtonOutlet.isEnabled = false
-        ComputeMatchesButtonOutlet.isEnabled = false
-        ExportMatchesButtonOutlet.isEnabled = false
-    }
-    
+
+    // Default functions
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         
         disableTextViews()
         disableDependentButtons()

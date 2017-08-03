@@ -253,14 +253,14 @@
                                 <rect key="frame" x="20" y="143" width="186" height="210"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <clipView key="contentView" ambiguous="YES" id="cSU-vM-j2q">
-                                    <rect key="frame" x="1" y="1" width="169" height="208"/>
+                                    <rect key="frame" x="1" y="1" width="184" height="208"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="ZiI-0Y-eIr">
-                                            <rect key="frame" x="0.0" y="0.0" width="169" height="208"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="208"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="169" height="208"/>
+                                            <size key="minSize" width="184" height="208"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -272,7 +272,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="8yl-tw-Uxn">
-                                    <rect key="frame" x="170" y="1" width="15" height="208"/>
+                                    <rect key="frame" x="169" y="1" width="16" height="208"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -280,14 +280,14 @@
                                 <rect key="frame" x="297" y="143" width="186" height="210"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <clipView key="contentView" ambiguous="YES" id="qSA-Dd-3QV">
-                                    <rect key="frame" x="1" y="1" width="169" height="208"/>
+                                    <rect key="frame" x="1" y="1" width="184" height="208"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="GVx-Ck-tRq">
-                                            <rect key="frame" x="0.0" y="0.0" width="169" height="208"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="208"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="169" height="208"/>
+                                            <size key="minSize" width="184" height="208"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -299,7 +299,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="S3f-1r-WhJ">
-                                    <rect key="frame" x="170" y="1" width="15" height="208"/>
+                                    <rect key="frame" x="169" y="1" width="16" height="208"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -339,7 +339,7 @@
                 </windowController>
                 <customObject id="i9e-3K-cq6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="291" y="1277"/>
+            <point key="canvasLocation" x="290" y="1299"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="psj-XX-yhA">
@@ -389,14 +389,14 @@
                                 <rect key="frame" x="45" y="92" width="264" height="201"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <clipView key="contentView" ambiguous="YES" id="m1D-7j-Thg">
-                                    <rect key="frame" x="1" y="1" width="247" height="199"/>
+                                    <rect key="frame" x="1" y="1" width="262" height="199"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="ogN-f5-FZz">
-                                            <rect key="frame" x="0.0" y="0.0" width="247" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="262" height="199"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="247" height="199"/>
+                                            <size key="minSize" width="262" height="199"/>
                                             <size key="maxSize" width="463" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -408,7 +408,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Xx3-Du-nZl">
-                                    <rect key="frame" x="248" y="1" width="15" height="199"/>
+                                    <rect key="frame" x="247" y="1" width="16" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -441,7 +441,7 @@
                 </viewController>
                 <customObject id="1JY-Ly-iaz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-123" y="1277"/>
+            <point key="canvasLocation" x="-123" y="1278"/>
         </scene>
     </scenes>
 </document>
