@@ -32,8 +32,23 @@ class ViewController: NSViewController {
         ComputeMatchesButtonOutlet.isEnabled = false
         ExportMatchesButtonOutlet.isEnabled = false
     }
-        
     
+    func clearLoadedTextViews() {
+        BigsTextView.textStorage?.mutableString.setString("")
+        LittlesTextView.textStorage?.mutableString.setString("")
+    }
+        
+    func updateLists(bs: inout [Girl], ls: inout [Girl]) {
+        clearLoadedTextViews()
+        for chick in bs {
+            BigsTextView.textStorage?.append(NSAttributedString(string: chick.name))
+            BigsTextView.textStorage?.append(NSAttributedString(string: "\n"))
+        }
+        for chick in ls {
+            LittlesTextView.textStorage?.append(NSAttributedString(string: chick.name))
+            LittlesTextView.textStorage?.append(NSAttributedString(string: "\n"))
+        }
+    }
     
     // Opening the CSV file
     func openFile() {
@@ -58,12 +73,12 @@ class ViewController: NSViewController {
                 var values = line.components(separatedBy: ",")
                 
                 if (values.count >= 4) {
-                    var currentGirl : Girl = Girl()
+                    let currentGirl : Girl = Girl()
                     currentGirl.name = values[2]
                     currentGirl.prefs = []
                     currentGirl.numMatches =  1
-                    for var i in (0..<values.count) {
-                        currentGirl.prefs.append(values[i].lowercased())
+                    for var i in (4..<values.count-1) {
+                        currentGirl.prefs.append(values[i].lowercased()) // THIS RIGHT?
                     }
                     if (values[3] == "Big") {
                         currentGirl.isBig = true
@@ -75,7 +90,8 @@ class ViewController: NSViewController {
                     }
                 }
             }
-            //updateList(bigs, littles)
+            updateLists(bs: &bigs, ls: &littles)
+            fileOpener.close()
         }
         else {
             chosenCSV = "null"
