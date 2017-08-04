@@ -33,6 +33,7 @@ class ViewController: NSViewController {
         ExportMatchesButtonOutlet.isEnabled = false
     }
     
+    // Clearing out "Bigs" and "Littles" text views
     func clearLoadedTextViews() {
         BigsTextView.textStorage?.mutableString.setString("")
         LittlesTextView.textStorage?.mutableString.setString("")
