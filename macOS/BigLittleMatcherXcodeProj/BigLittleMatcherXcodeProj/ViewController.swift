@@ -15,7 +15,12 @@ class Girl: NSObject {
     var isBig: Bool = false
 }
 
+
+
 class ViewController: NSViewController {
+    // Globals
+    var bigs: [Girl] = []
+    var littles: [Girl] = []
     
     // Program functions
     
@@ -51,7 +56,7 @@ class ViewController: NSViewController {
         }
     }
     
-    // Opening the CSV file
+    // Opening the CSV file and add names to vectors
     func openFile() {
         let fileOpener:NSOpenPanel = NSOpenPanel()
         fileOpener.allowsMultipleSelection = false
@@ -64,9 +69,6 @@ class ViewController: NSViewController {
         if let url = (fileOpener.url) {
             let fileContent = try? String(contentsOf: url)
             let lines : [String] = fileContent!.components(separatedBy: "\n")
-            
-            var bigs: [Girl] = []
-            var littles: [Girl] = []
             
             var headers: String = lines[0]
             
@@ -98,6 +100,17 @@ class ViewController: NSViewController {
             chosenCSV = "null"
         }
     }
+    
+    // Warning about data erasing upon new CSV open
+    func warnCSV(question: String, text: String) -> Bool {
+        let alert = NSAlert()
+        alert.messageText = "WARNING!"
+        alert.informativeText = "Opening another CSV file will erase your current loaded data. Continue?"
+        alert.alertStyle = NSAlertStyle.warning
+        alert.addButton(withTitle: "Continue")
+        alert.addButton(withTitle: "Cancel")
+        return alert.runModal() == NSAlertFirstButtonReturn
+    }
 
     // IBOutlets
     @IBOutlet var BigsTextView: NSTextView!
@@ -120,11 +133,23 @@ class ViewController: NSViewController {
     }
     
     @IBAction func LoadCSV_Click(_ sender: Any) {
-        openFile()
+        if (BigsTextView.textStorage?.length == 0 && LittlesTextView.textStorage?.length == 0) {
+            openFile()
+
+        }
+        else {
+            let answer = warnCSV(question: "Ok?", text: "Choose your answer.")
+            if (answer == true) {
+                openFile()
+            }
+            else {
+                print("Do nothing")
+            }
+        }
     }
     
-    
     @IBAction func ManualInputButton_Click(_ sender: Any) {
+        
     }
     
     

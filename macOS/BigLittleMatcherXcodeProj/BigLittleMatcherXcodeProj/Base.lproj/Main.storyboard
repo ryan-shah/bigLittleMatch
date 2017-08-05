@@ -345,7 +345,7 @@
         <scene sceneID="psj-XX-yhA">
             <objects>
                 <viewController id="BKn-zM-buP" sceneMemberID="viewController">
-                    <view key="view" id="9SX-A2-FJh">
+                    <view key="view" id="9SX-A2-FJh" customClass="ManualRetry" customModule="BigLittleMatcherXcodeProj" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="358" height="407"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -419,6 +419,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="AddToBigsButtonAction:" target="9SX-A2-FJh" id="TuN-Jn-Zi8"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25v-e6-caz">
                                 <rect key="frame" x="182" y="51" width="133" height="32"/>
@@ -437,9 +440,18 @@
                                 </buttonCell>
                             </button>
                         </subviews>
+                        <connections>
+                            <outlet property="PrefList" destination="ogN-f5-FZz" id="pOq-Hs-ruI"/>
+                            <outlet property="PrefListTextView" destination="ogN-f5-FZz" id="tix-MW-EGL"/>
+                        </connections>
                     </view>
                 </viewController>
                 <customObject id="1JY-Ly-iaz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <textFieldCell scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="rjZ-dn-Z6U">
+                    <font key="font" metaFont="system"/>
+                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                </textFieldCell>
             </objects>
             <point key="canvasLocation" x="-123" y="1278"/>
         </scene>

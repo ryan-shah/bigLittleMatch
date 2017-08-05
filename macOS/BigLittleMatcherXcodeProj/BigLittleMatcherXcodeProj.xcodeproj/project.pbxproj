@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B822B10A1F36447E0099E780 /* ManualRetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B822B1091F36447E0099E780 /* ManualRetry.swift */; };
 		B88F96F71F2FCDC80064407C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F96F61F2FCDC80064407C /* AppDelegate.swift */; };
 		B88F96F91F2FCDC80064407C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F96F81F2FCDC80064407C /* ViewController.swift */; };
 		B88F96FB1F2FCDC80064407C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88F96FA1F2FCDC80064407C /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B822B1091F36447E0099E780 /* ManualRetry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualRetry.swift; sourceTree = "<group>"; };
 		B88F96F31F2FCDC80064407C /* BigLittleMatcherXcodeProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigLittleMatcherXcodeProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88F96F61F2FCDC80064407C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B88F96F81F2FCDC80064407C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				B88F96F81F2FCDC80064407C /* ViewController.swift */,
 				B88F96FA1F2FCDC80064407C /* Assets.xcassets */,
 				B88F96FC1F2FCDC80064407C /* Main.storyboard */,
+				B822B1091F36447E0099E780 /* ManualRetry.swift */,
 				B88F96FF1F2FCDC80064407C /* Info.plist */,
 			);
 			path = BigLittleMatcherXcodeProj;
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B822B10A1F36447E0099E780 /* ManualRetry.swift in Sources */,
 				B88F96F91F2FCDC80064407C /* ViewController.swift in Sources */,
 				B88F96F71F2FCDC80064407C /* AppDelegate.swift in Sources */,
 			);
