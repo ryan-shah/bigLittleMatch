@@ -1,12 +1,4 @@
-Big Little Matching utility 
-===========================
+Big Little Matching Utility
+=========================
 
-TODO
------
-
- * Add Functionality for multiple littles
- * Improve UI
- * Add Buttons in additon to menu items
- * Help menu
- * About menu
- * Export Data
+go to winOS or biglittle_mac_port to see OS specific status/TODO
