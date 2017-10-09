@@ -41,7 +41,7 @@ namespace bigLittleMatch
         dataInputForm input = new dataInputForm();
         editBigsForm ebf = new editBigsForm();
         editLittlesForm elf = new editLittlesForm();
-        helpForm help = new helpForm();
+        aboutForm abt = new aboutForm();
         matchesForm matches = new matchesForm();
 
         //set parents of child forms
@@ -50,7 +50,7 @@ namespace bigLittleMatch
             input.parentForm = this;
             ebf.parentForm = this;
             elf.parentForm = this;
-            help.parentForm = this;
+            abt.parentForm = this;
             matches.parentForm = this;
         }
 
@@ -507,12 +507,6 @@ namespace bigLittleMatch
             saveFile();
         }
 
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1nsQLFHTEssoZHufmz7eB_PJQJAjBBZtTkuj76Y2gWRU/edit?usp=sharing");
-            //help.ShowDialog();
-        }
-
         private void viewMatches_Click(object sender, EventArgs e)
         {
             matches.ShowDialog();
@@ -521,6 +515,16 @@ namespace bigLittleMatch
         private void viewMatchesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             matches.ShowDialog();
+        }
+
+        private void helpDocumentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1nsQLFHTEssoZHufmz7eB_PJQJAjBBZtTkuj76Y2gWRU/edit?usp=sharing");
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abt.ShowDialog();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.littleBox = new System.Windows.Forms.TextBox();
             this.bigsBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,11 +38,14 @@
             this.openCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualInputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.computeMatchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewMatchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bigsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.littlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpDocumentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataInputGroup = new System.Windows.Forms.GroupBox();
             this.manualInput = new System.Windows.Forms.Button();
             this.LoadCSV = new System.Windows.Forms.Button();
@@ -53,7 +57,6 @@
             this.viewMatches = new System.Windows.Forms.Button();
             this.export = new System.Windows.Forms.Button();
             this.match = new System.Windows.Forms.Button();
-            this.viewMatchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.dataInputGroup.SuspendLayout();
             this.dataContainer.SuspendLayout();
@@ -145,6 +148,13 @@
             this.computeMatchesToolStripMenuItem.Text = "Compute Matches";
             this.computeMatchesToolStripMenuItem.Click += new System.EventHandler(this.computeMatchesToolStripMenuItem_Click);
             // 
+            // viewMatchesToolStripMenuItem
+            // 
+            this.viewMatchesToolStripMenuItem.Name = "viewMatchesToolStripMenuItem";
+            this.viewMatchesToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.viewMatchesToolStripMenuItem.Text = "View Matches";
+            this.viewMatchesToolStripMenuItem.Click += new System.EventHandler(this.viewMatchesToolStripMenuItem_Click);
+            // 
             // exportDataToolStripMenuItem
             // 
             this.exportDataToolStripMenuItem.Name = "exportDataToolStripMenuItem";
@@ -177,10 +187,26 @@
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpDocumentToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // helpDocumentToolStripMenuItem
+            // 
+            this.helpDocumentToolStripMenuItem.Name = "helpDocumentToolStripMenuItem";
+            this.helpDocumentToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.helpDocumentToolStripMenuItem.Text = "Help Document";
+            this.helpDocumentToolStripMenuItem.Click += new System.EventHandler(this.helpDocumentToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // dataInputGroup
             // 
@@ -298,13 +324,6 @@
             this.match.UseVisualStyleBackColor = true;
             this.match.Click += new System.EventHandler(this.match_Click);
             // 
-            // viewMatchesToolStripMenuItem
-            // 
-            this.viewMatchesToolStripMenuItem.Name = "viewMatchesToolStripMenuItem";
-            this.viewMatchesToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.viewMatchesToolStripMenuItem.Text = "View Matches";
-            this.viewMatchesToolStripMenuItem.Click += new System.EventHandler(this.viewMatchesToolStripMenuItem_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,6 +334,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "mainForm";
@@ -359,6 +379,8 @@
         private System.Windows.Forms.Button match;
         private System.Windows.Forms.Button viewMatches;
         private System.Windows.Forms.ToolStripMenuItem viewMatchesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpDocumentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
