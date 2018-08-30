@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="bigLittleMatch.exe" size="235416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="bigLittleMatch.exe" size="252416">
       <assemblyIdentity name="bigLittleMatch" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/j8LnEvCV9p9EIr969buyHSUJgDInhfrIzd72W6w7bs=</dsig:DigestValue>
+        <dsig:DigestValue>m2rUoMmIuzbWDEEyf92sSyT9dH1x1DrKKjfObcy5H2g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -63,13 +63,13 @@
       <dsig:DigestValue>1NgAxCSw4ibTXzWVy7D6Rw60Qih4Dn37KvGhG5Ora/s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="rose.ico" size="99678">
+  <file name="rose.ico" size="118440">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>RYbTrQazcqawWLXBrMCdst9cZZ9p1V+MCcvxByj83wc=</dsig:DigestValue>
+      <dsig:DigestValue>/c3iO4UElw2AMNU9FTIQbDHPcl1yBwTcPCmsHaYW0qo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
